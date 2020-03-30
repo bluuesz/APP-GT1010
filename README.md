@@ -30,14 +30,13 @@
 <!-- ABOUT THE PROJECT -->
 
 ## About the project
-A simple app for share your histories. This app was been develop with <a href="">React Native</a> and <a href="">NodeJS</a>.
+
+<!-- A simple app for share your histories. This app was been develop with <a href="">React Native</a> and <a href="">NodeJS</a>.
 The main objective is learning more about redux/redux-saga and also 4fun.
 
-Para uma versão mais completa mude para a branch develop.
+Para uma versão mais completa mude para a branch develop. -->
 
-
-
-### Desenvolvido Com
+### Developed with
 
 - [React Native](https://reactnative.dev/?source=post_page-----6e8a2396eea1----------------------)
 - [NodeJS]()
@@ -94,12 +93,12 @@ são **extremamente apreciadas**
 
 <!-- LICENSE -->
 
-## Licença
+## License
 
-Distribuido sobre a licença `MIT`. Leia o arquivo `LICENSE` para mais informações.
+<!-- Distribuido sobre a licença `MIT`. Leia o arquivo `LICENSE` para mais informações. -->
 
 <!-- CONTACT -->
 
-## Contato
+## Contact
 
 Wosley Vacemberg - [@bluuesz](https://twitter.com/bluuu3s) - wosleyv@gmail.com
