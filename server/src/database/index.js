@@ -1,7 +1,5 @@
 import Sequelize from 'sequelize';
 
-// models
-
 import dbConfig from '../config/database';
 
 const models = [];
