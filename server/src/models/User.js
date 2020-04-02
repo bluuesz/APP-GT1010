@@ -1,4 +1,4 @@
-import Sequelize from 'sequelize';
+import { DataTypes } from 'sequelize';
 import bcrypt from 'bcryptjs';
 import connection from '../database';
 
@@ -6,18 +6,18 @@ const User = connection.define(
   'Users',
   {
     name: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     email: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     password: {
-      type: Sequelize.VIRTUAL,
+      type: DataTypes.VIRTUAL,
     },
     password_hash: {
-      type: Sequelize.STRING,
+      type: DataTypes.STRING,
     },
   },
   {
