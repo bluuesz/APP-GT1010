@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import OpenApp from './pages/OpenApp';
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -11,6 +12,7 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
+        <Stack.Screen name="Open" component={OpenApp} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Register" component={Register} />
       </Stack.Navigator>

@@ -22,13 +22,11 @@ const Login = ({ navigation }) => {
       <TitleAuth>Login</TitleAuth>
       <MailInput
         autoCorrect={false}
-        autoCapitalize={false}
         placeholder="Seu email"
         textContentType="emailAddress"
       />
       <PasswordInput
         autoCorrect={false}
-        autoCapitalize={false}
         placeholder="********"
         textContentType="password"
         secureTextEntry

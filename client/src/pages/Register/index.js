@@ -22,19 +22,16 @@ const Register = ({ navigation }) => {
       <TitleAuth>Registro</TitleAuth>
       <NameInput
         autoCorrect={false}
-        autoCapitalize
         placeholder="Seu nome"
         textContentType="name"
       />
       <MailInput
         autoCorrect={false}
-        autoCapitalize={false}
         placeholder="Seu email"
         textContentType="emailAddress"
       />
       <PasswordInput
         autoCorrect={false}
-        autoCapitalize={false}
         placeholder="********"
         textContentType="password"
         secureTextEntry

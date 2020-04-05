@@ -6,7 +6,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
 
-  background: #2d2b2b;
+  background: #f9f9f9;
 `;
 
 export const LogoApp = styled.Image`
@@ -15,7 +15,7 @@ export const LogoApp = styled.Image`
 `;
 
 export const TitleAuth = styled.Text`
-  color: #fff;
+  color: #373737;
   font-weight: 300;
   font-size: 36px;
   line-height: 42px;
@@ -24,11 +24,11 @@ export const TitleAuth = styled.Text`
 `;
 
 export const NameInput = styled.TextInput.attrs({
-  placeholderTextColor: '#999',
+  placeholderTextColor: '#828282',
 })`
   margin-top: 17px;
 
-  background: #f2eaea;
+  background: rgba(198, 198, 198, 0.7);
   border-radius: 4px;
   padding: 0 19px;
 
@@ -37,11 +37,11 @@ export const NameInput = styled.TextInput.attrs({
 `;
 
 export const MailInput = styled.TextInput.attrs({
-  placeholderTextColor: '#999',
+  placeholderTextColor: '#828282',
 })`
   margin-top: 19px;
 
-  background: #f2eaea;
+  background: rgba(198, 198, 198, 0.7);
   border-radius: 4px;
   padding: 0 19px;
 
@@ -50,11 +50,11 @@ export const MailInput = styled.TextInput.attrs({
 `;
 
 export const PasswordInput = styled.TextInput.attrs({
-  placeholderTextColor: '#999',
+  placeholderTextColor: '#828282',
 })`
   margin-top: 15px;
 
-  background: #f2eaea;
+  background: rgba(198, 198, 198, 0.7);
   border-radius: 4px;
   padding: 0 19px;
 
@@ -68,7 +68,7 @@ export const BtnLogin = styled(RectButton)`
   align-items: center;
   justify-content: center;
 
-  background: #d66161;
+  background: rgba(234, 40, 69, 0.9);
   border-radius: 4px;
 
   width: 275px;
@@ -90,5 +90,5 @@ export const TextLoginOrRegister = styled.Text`
   font-size: 24px;
   line-height: 28px;
 
-  color: #bebcbc;
+  color: #373737;
 `;
