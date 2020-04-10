@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-const { User } = require('../models');
+import { User } from '../models';
 
 export default async (req, res) => {
   const schema = Yup.object().shape({

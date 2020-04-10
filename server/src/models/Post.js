@@ -1,4 +1,4 @@
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const Post = sequelize.define(
     'Post',
     {
@@ -13,6 +13,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     {}
   );
+
+  Post.associate = models => {
+    Post.belongsTo(models.User, {
+      foreignKey: 'user_id',
+      as: 'user_post',
+    });
+  };
 
   Post.associate = models => {
     Post.belongsToMany(models.Tag, {

@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
 import * as Yup from 'yup';
-import User from '../models/User';
+import { User } from '../models';
 
 export default async (req, res) => {
   const schema = Yup.object().shape({

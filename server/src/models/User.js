@@ -7,7 +7,7 @@ import jwt from 'jsonwebtoken';
 
 // import connection from '../database';
 
-module.exports = (sequelize, DataTypes) => {
+export default (sequelize, DataTypes) => {
   const User = sequelize.define(
     'User',
     {
@@ -36,6 +36,13 @@ module.exports = (sequelize, DataTypes) => {
       },
     }
   );
+
+  User.associate = models => {
+    User.hasMany(models.Post, {
+      foreignKey: 'user_id',
+      as: 'owner_post',
+    });
+  };
 
   User.prototype.validPassword = function(password) {
     return bcrypt.compare(password, this.password_hash);

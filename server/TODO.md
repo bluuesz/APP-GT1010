@@ -1,9 +1,11 @@
 [x] Cria-r seeds tags
 [X] Criar tags,
 [X] Criar posts + link tag
-[] Listar posts
+[X] Listar posts
+[x] Relacionamento para listar os posts do usuario
 
 
-REFATORAR ESSA MERDA E MELHORAR CODIGO / ENTENDER COMO FUNFA
+
+[x] REFATORAR ESSA MERDA E MELHORAR CODIGO / ENTENDER COMO FUNFA
 
 

@@ -1,6 +1,6 @@
-import Tag from '../models/Tag';
+import { Tag } from '../models';
 
-export default async (req, res) => {
+export const CreateTag = async (req, res) => {
   const { name } = req.body;
 
   console.log(req.userId);
