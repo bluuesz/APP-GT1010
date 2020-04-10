@@ -1,11 +1,13 @@
-import Sequelize from 'sequelize';
+// /* eslint-disable import/no-cycle */
+// import Sequelize from 'sequelize';
+// import dbConfig from '../config/database';
 
-import dbConfig from '../config/database';
+// import Post from '../models/Post';
 
-const models = [];
+// const models = [Post];
 
-const connection = new Sequelize(dbConfig);
+// const connection = new Sequelize(dbConfig);
 
-models.map(model => model.init(connection));
+// models.map(model => model.associate(connection));
 
-export default connection;
+// export default connection;

@@ -1,7 +1,6 @@
 import 'dotenv/config';
 
 import * as Yup from 'yup';
-import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
 export default async (req, res) => {
@@ -40,8 +39,6 @@ export default async (req, res) => {
       name,
       email,
     },
-    token: jwt.sign({ id }, process.env.APP_SECRET, {
-      expiresIn: '1d',
-    }),
+    token: user.generateToken(),
   });
 };
