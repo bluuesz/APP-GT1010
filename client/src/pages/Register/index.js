@@ -1,49 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Back } from '../../services/navigation';
 
 import Logo from '../../../assets/Logo.png';
 
-import {
-  Container,
-  LogoApp,
-  TitleAuth,
-  NameInput,
-  MailInput,
-  PasswordInput,
-  BtnLogin,
-  TextBtn,
-  TextLoginOrRegister,
-} from '../../components/_layouts/authenticate';
+import Input from '../../components/Input';
+import Container from '../../components/ContainerAuth';
+import { LogoImg, TextRegister, ButtonRegister, TextLinkLogin } from './styles';
 
 const Register = ({ navigation }) => {
   return (
     <Container>
-      <LogoApp source={Logo} />
-      <TitleAuth>Registro</TitleAuth>
-      <NameInput
+      <LogoImg source={Logo} />
+      <TextRegister>Registro</TextRegister>
+      <Input
+        icon="person-outline"
         autoCorrect={false}
         placeholder="Seu nome"
         textContentType="name"
       />
-      <MailInput
+      <Input
+        icon="mail"
         autoCorrect={false}
         placeholder="Seu email"
         textContentType="emailAddress"
       />
-      <PasswordInput
+      <Input
+        icon="lock"
         autoCorrect={false}
         placeholder="********"
         textContentType="password"
         secureTextEntry
       />
 
-      <BtnLogin>
-        <TextBtn>Cadastrar</TextBtn>
-      </BtnLogin>
+      <ButtonRegister>Cadastrar</ButtonRegister>
 
-      <TextLoginOrRegister onPress={() => navigation.navigate('Login')}>
+      <TextLinkLogin onPress={() => Back(navigation)}>
         Efetuar Login
-      </TextLoginOrRegister>
+      </TextLinkLogin>
     </Container>
   );
 };

@@ -1,6 +1,11 @@
 import styled from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
+export const LogoImg = styled.Image`
+  width: 120px;
+  height: 114px;
+`;
+
 export const BtnLogin = styled(RectButton)`
   margin-top: 54px;
   width: 275px;
@@ -56,4 +61,6 @@ export const NextApp = styled.Text`
   font-size: 25px;
   line-height: 29px;
   color: #000000;
+  border-bottom-width: 2px;
+  border-color: rgba(234, 40, 69, 0.9);
 `;

@@ -1,52 +1,76 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import PropTypes from 'prop-types';
+import { useForm } from 'react-hook-form';
+import { Navigate } from '../../services/navigation';
+
+import { signInRequest } from '../../store/modules/auth/actions';
 
 import Logo from '../../../assets/Logo.png';
 
-import {
-  Container,
-  LogoApp,
-  TitleAuth,
-  MailInput,
-  PasswordInput,
-  BtnLogin,
-  TextBtn,
-  TextLoginOrRegister,
-} from '../../components/_layouts/authenticate';
+import Input from '../../components/Input';
+import Container from '../../components/ContainerAuth';
+import { LogoImg, TextLogin, ButtonLogin, TextLinkRegister } from './styles';
 
-const Login = ({ navigation }) => {
+export default function Login({ navigation }) {
+  const { register, handleSubmit, setValue } = useForm();
+  const passwordRef = useRef();
+
+  const dispatch = useDispatch();
+  const loading = useSelector((state) => state.auth.loading);
+
+  const onSubmit = ({ email, password }) => {
+    dispatch(signInRequest(email, password));
+  };
+
+  useEffect(() => {
+    register('email');
+    register('password');
+  }, [register]);
+
   return (
     <Container>
-      <LogoApp source={Logo} />
-      <TitleAuth>Login</TitleAuth>
-      <MailInput
+      <LogoImg source={Logo} />
+      <TextLogin>Login</TextLogin>
+      <Input
+        icon="mail"
         autoCorrect={false}
-        placeholder="Seu email"
+        placeholder="Digite seu e-mail"
         textContentType="emailAddress"
+        onChangeText={(text) => {
+          setValue('email', text);
+        }}
+        returnKeyType="next"
+        onSubmitEditing={() => passwordRef.current.focus()}
       />
-      <PasswordInput
+      <Input
+        icon="lock"
         autoCorrect={false}
-        placeholder="********"
+        placeholder="Digite sua senha"
         textContentType="password"
         secureTextEntry
+        onChangeText={(text) => {
+          setValue('password', text);
+        }}
+        ref={passwordRef}
+        returnKeyType="send"
+        onSubmitEditing={handleSubmit(onSubmit)}
       />
 
-      <BtnLogin>
-        <TextBtn>Entrar</TextBtn>
-      </BtnLogin>
+      <ButtonLogin loading={loading} onPress={handleSubmit(onSubmit)}>
+        Entrar
+      </ButtonLogin>
 
-      <TextLoginOrRegister onPress={() => navigation.navigate('Register')}>
+      <TextLinkRegister onPress={() => Navigate(navigation, 'Register')}>
         Criar conta gratuitamente
-      </TextLoginOrRegister>
+      </TextLinkRegister>
     </Container>
   );
-};
+}
 
 Login.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
 };
-
-export default Login;

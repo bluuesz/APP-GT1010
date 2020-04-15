@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Logo from '../../../assets/Logo.png';
-import { Container, LogoApp } from '../../components/_layouts/authenticate';
+import Container from '../../components/ContainerAuth';
+
 import {
+  LogoImg,
   BtnLogin,
   TextBtnLogin,
   ContentOther,
@@ -17,7 +19,7 @@ import {
 const OpenApp = ({ navigation }) => {
   return (
     <Container>
-      <LogoApp source={Logo} />
+      <LogoImg source={Logo} />
       <BtnLogin onPress={() => navigation.navigate('Login')}>
         <TextBtnLogin>Entrar</TextBtnLogin>
       </BtnLogin>
