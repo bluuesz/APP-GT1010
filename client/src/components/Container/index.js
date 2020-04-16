@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ContainerAuth from './styles';
+import Background from './styles';
 
 export default function Container({ children }) {
-  return <ContainerAuth>{children}</ContainerAuth>;
+  return <Background>{children}</Background>;
 }
 
 Container.propTypes = {

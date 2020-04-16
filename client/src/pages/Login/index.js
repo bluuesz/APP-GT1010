@@ -10,7 +10,7 @@ import { signInRequest } from '../../store/modules/auth/actions';
 import Logo from '../../../assets/Logo.png';
 
 import Input from '../../components/Input';
-import Container from '../../components/ContainerAuth';
+import Container from '../../components/Container';
 import { LogoImg, TextLogin, ButtonLogin, TextLinkRegister } from './styles';
 
 export default function Login({ navigation }) {

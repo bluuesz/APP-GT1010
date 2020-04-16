@@ -14,6 +14,7 @@ const Index = () => {
   return (
     <NavigationContainer>
       <Provider store={store}>
+        {/*  Revisar isso depois */}
         <PersistGate persistor={persistor}>
           <StatusBar barStyle="dark-content" backgroundColor="#F9F9F9" />
           <App />
