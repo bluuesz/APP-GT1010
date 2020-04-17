@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="http://www.uepb.edu.br/">
-    <img src="./.github/Logo.png" alt="Logo" height="150">
+    <img src="./.github/Logo1.png" alt="Logo" height="150">
   </a>
 
   <h3 align="center">GT 10/10</h3>
