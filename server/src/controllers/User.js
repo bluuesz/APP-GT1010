@@ -26,5 +26,5 @@ export default async (req, res) => {
 
   await User.create({ name, email, password });
 
-  return res.json({ name, email });
+  return res.json('ok');
 };

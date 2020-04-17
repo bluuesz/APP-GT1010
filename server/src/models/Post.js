@@ -19,9 +19,10 @@ export default (sequelize, DataTypes) => {
       foreignKey: 'user_id',
       as: 'user_post',
     });
-  };
-
-  Post.associate = models => {
+    Post.belongsTo(models.File, {
+      foreignKey: 'image_id',
+      as: 'slacara',
+    });
     Post.belongsToMany(models.Tag, {
       through: 'tags_post',
       as: 'tags',

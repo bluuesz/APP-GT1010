@@ -1,12 +1,13 @@
 import { Post, Tag } from '../models';
 
 export const CreatePosts = async (req, res) => {
-  const { tags, title, content } = req.body;
+  const { tags, title, content, image_id } = req.body;
 
   const post = await Post.create({
     user_id: req.userId,
     title,
     content,
+    image_id,
   });
 
   if (tags && tags.length > 0) {
@@ -17,11 +18,9 @@ export const CreatePosts = async (req, res) => {
 };
 
 export const IndexPosts = async (req, res) => {
-  const { tag } = req.params;
+  const { tag_id } = req.params;
 
-  const tagInt = parseInt(tag, 10);
-
-  console.log(typeof tagInt);
+  const tagInt = parseInt(tag_id, 10);
 
   const posts = await Post.findAll({
     include: [
@@ -34,6 +33,11 @@ export const IndexPosts = async (req, res) => {
       },
     ],
   });
+
+  if (posts.length === 0)
+    return res
+      .status(404)
+      .json({ message: "Don't exists post for this tag selected" });
 
   return res.json(posts);
 };

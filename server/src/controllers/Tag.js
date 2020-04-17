@@ -17,3 +17,9 @@ export const CreateTag = async (req, res) => {
 
   return res.json({ name });
 };
+
+export const ListAllTag = async (_, res) => {
+  const user = await Tag.findAll({ attributes: ['id', 'name'] });
+
+  return res.json(user);
+};
