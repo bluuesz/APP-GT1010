@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Alert } from 'react-native';
+import { Alert, Button } from 'react-native';
 
 import {
   Container,
@@ -11,7 +11,7 @@ import {
   TitleCategory,
 } from './styles';
 
-export default function Dashboard() {
+export default function Dashboard({ navigation }) {
   const name = useSelector((state) => state.user.profile.name);
   const x = [
     { id: 1, name: 'Adolescentes', url: 'https://i.imgur.com/LvjGJkP.png' },
@@ -44,6 +44,8 @@ export default function Dashboard() {
           </Category>
         )}
       />
+
+      <Button title="Go posts" onPress={() => navigation.navigate('Posts')} />
     </Container>
   );
 }
